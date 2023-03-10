@@ -1,6 +1,6 @@
 @props(['post'])
 <article
-    class="bg-gray-100 m-1 hover:bg-gray-200 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
+    class="bg-blue-200 m-1 hover:bg-green-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
     <div class="py-6 px-5 lg:flex">
         <div class="flex-1 lg:mr-8">
             <img src="/images/newspaper.jpg" alt="Blog Post illustration" class="rounded-xl">
@@ -19,7 +19,7 @@
                 <div class="mt-4">
                     <h1 class="text-3xl">
                         <a href="/posts/{{ $post->slug }}">
-                            {{ $post->title }}
+                            {{ $post->title }} 
                         </a>
                     </h1>
 
@@ -39,7 +39,7 @@
 
             <footer class="flex justify-between items-center mt-8">
                 <div class="flex items-center text-sm">
-                    <img src="/images/lary-avatar.svg" alt="Lary avatar">
+                    <img src="/images/user-128.svg" alt="avatar">
                     <div class="ml-3">
 
                         <a href="/authors/{{$post->author->username}}">
@@ -52,8 +52,8 @@
 
                 <div class="hidden lg:block">
                     <a href="/posts/{{ $post->slug }}"
-                        class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8">Read
-                        More</a>
+                        class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8">
+                        Read More</a>
                 </div>
             </footer>
         </div>

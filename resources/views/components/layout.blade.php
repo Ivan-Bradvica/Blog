@@ -11,15 +11,18 @@
     <style>
         html {
             scroll-behavior: smooth;
+
         }
 
-        body {
-            background-image: url('/images/background.png')
+        #body {
+            background-color: rgb(222, 222, 222);
         }
+
+       
     </style>
 </head>
 
-<body style="font-family: Open Sans, sans-serif flex flex-col min-h-screen">
+<body style="font-family: Open Sans, sans-serif flex flex-col " id="body">
     <section class="px-4 py-6 ">
         <nav class="md:flex md:justify-between md:items-center ">
             <div>
@@ -30,20 +33,29 @@
 
             <div class="mt-8 md:mt-0 flex items-center">
                 @auth
-                <div x-data="{ open: false }">
-                    <button x-on:click="open = ! open" class="bg-yellow-200 rounded  text-color-white px-2 border border-gray-400">{{ auth()->user()->name }} </button>
-                 
-                    <div x-show="open" >
-                        <a href="/admin/posts/create" class="text-gray-100">Create Post</a><br>
-                        <a href="/admin/posts" class="text-gray-100">Dashboard</a>
+                    <div x-data="{ open: false }" >
+                        <button x-on:click="open = !open"
+                            class="bg-red-100 rounded  text-color-white px-2 border border-gray-400 sticky">{{ auth()->user()->name }}
+                        </button>
+                        <!-- -->
+                        <div x-show="open" >
+                            
+
+
+                                <a href="/admin/posts/create" class="text-gray-100">Create Post</a><br>
+                                <a href="/admin/posts" class="text-gray-100">Dashboard</a>
+                            
+                        </div>
+
+
+                        <!-- -->
                     </div>
-                </div>
 
-                    
 
-                    
 
-                    
+
+
+
 
                     <form action="/logout" method="POST">
                         @csrf
@@ -73,10 +85,10 @@
         @yield('content')
 
 
-        
+
         <footer id="newsletter"
-            class="  bg-gray-300 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
-            <img src="/images/lary-newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 145px;">
+            class="  bg-gray-300 border border-black border-opacity-2 rounded-xl text-center py-16 px-10 mt-10">
+            <img src="/images/user-128.svg" alt="" class="mx-auto -mb-6" style="width: 145px;">
             <h5 class="text-3xl">Stay in touch with the latest posts</h5>
             <p class="text-sm mt-3">Problem with mailchimp.</p>
 
